@@ -1,0 +1,14 @@
+
+
+[json]
+app_name = TenableSC
+version = 1.0
+
+[tenablesc]
+pid_file = pidfile
+state_dir = ./state
+accesskey = 
+secretkey = 
+hostname = sc.tenalab.online
+scan_list = all
+days_ago = 120
