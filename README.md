@@ -20,7 +20,7 @@ cp tenablescScanResults.conf.template tenablescScanResults.conf
 
 change the following items in the config file based on your configuration token console site
 
-	accesskey = <Nessus Scanner local username>
+	accesskey 
 	secretkey
 	hostname = <hostname of tenableSC>
 	scan_list = all <or comma separated list of scan names>
