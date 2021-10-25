@@ -20,13 +20,13 @@ cp tenablescScanResults.conf.template tenablescScanResults.conf
 
 change the following items in the config file based on your configuration token console site
 
-accesskey = <Nessus Scanner local username>
-secretkey
-hostname = <hostname of tenableSC>
-scan_list = all <or comma separated list of scan names>
+	accesskey = <Nessus Scanner local username>
+	secretkey
+	hostname = <hostname of tenableSC>
+	scan_list = all <or comma separated list of scan names>
 
 Add these modules if they are not yet there:
-pip3 install pytenable
+	pip3 install pytenable
 
 Add the following entry to the root crontab so the script will run every day at 2am.
 
