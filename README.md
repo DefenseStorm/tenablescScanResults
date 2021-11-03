@@ -1,5 +1,9 @@
 Nessus Integration for DefenseStorm
 
+NOTE: you need the python3 tenable.io module to install
+
+sudo pip3 install tenable.io
+
 to pull this repository and submodules:
 
 git clone --recurse-submodules https://github.com/DefenseStorm/tenablescScanResults.git
