@@ -72,7 +72,7 @@ class integration(object):
        
                 for vuln in vulns:
                     vuln['message'] = 'Scan Result - ' + details['finishTime']
-                    vuln['scan'] = 'Scan Result - ' + scan['name']
+                    vuln['scan'] = scan['name']
                     vuln['scanner'] = 'TenableSC'
                     vuln['timestamp'] = details['finishTime']
                     self.ds.writeJSONEvent(vuln)
