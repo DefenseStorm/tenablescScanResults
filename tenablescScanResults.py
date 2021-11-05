@@ -67,7 +67,8 @@ class integration(object):
                 if not int(details['finishTime']) > self.last_run:
                     self.ds.log("INFO", 'Scan too old: ' + scan['name'] + '(' + str(details['finishTime']) + ')')
                     continue
-                vulns = sc.analysis.vulns(scan_id=scan['id'])
+                vulns = sc.analysis.scan(scan['id'])
+                self.ds.log("INFO", 'Processing Scan: ' + scan['name'] + '(' + str(scan['id']) + ')' + '(' + str(details['finishTime']) + ')')
        
                 for vuln in vulns:
                     vuln['message'] = 'Scan Result - ' + details['finishTime']
