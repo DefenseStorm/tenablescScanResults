@@ -2,7 +2,7 @@ Nessus Integration for DefenseStorm
 
 NOTE: you need the python3 tenable.io module to install
 
-sudo pip3 install tenable.io
+sudo pip3 install tenable.sc
 
 to pull this repository and submodules:
 
@@ -26,11 +26,8 @@ change the following items in the config file based on your configuration token 
 
 	accesskey 
 	secretkey
-	hostname = <hostname of tenableSC>
+	hostname = <hostname/IP address of tenableSC>
 	scan_list = all <or comma separated list of scan names>
-
-Add these modules if they are not yet there:
-	pip3 install pytenable
 
 Add the following entry to the root crontab so the script will run every day at 2am.
 
