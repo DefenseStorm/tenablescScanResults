@@ -1,6 +1,6 @@
-Nessus Integration for DefenseStorm
+Tenable.SC Integration for DefenseStorm
 
-NOTE: you need the python3 tenable.io module to install
+NOTE: you need the python3 tenable.sc module to install
 
 sudo pip3 install tenable.sc
 
