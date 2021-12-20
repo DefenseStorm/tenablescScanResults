@@ -2,7 +2,7 @@ Tenable.SC Integration for DefenseStorm
 
 NOTE: you need the python3 tenable.sc module to install
 
-sudo pip3 install tenable.sc
+sudo pip3 install pytenable
 
 to pull this repository and submodules:
 
