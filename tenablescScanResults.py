@@ -43,7 +43,10 @@ class integration(object):
             if self.last_run == None:
                 self.ds.log("INFO", "No previous state.  Collecting logs for last " + str(self.days_ago) + " days")
                 self.last_run = current_time - ( 60 * 60 * 24 * int(self.days_ago))
-            self.current_run = current_time
+                #adjusting to run for 48-24 hours ago rather than the last 24
+                self.last_run = self.last_run - (60 * 60 * 24)
+            #adjusting to run for 48-24 hours ago rather than the last 24
+            self.current_run = current_time - (60 * 60 * 24)
         except Exception as e:
                 traceback.print_exc()
                 self.ds.log("ERROR", "Failed to get required configurations")
