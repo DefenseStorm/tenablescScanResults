@@ -47,6 +47,7 @@ class integration(object):
                 self.last_run = self.last_run - (60 * 60 * 24)
             #adjusting to run for 48-24 hours ago rather than the last 24
             self.current_run = current_time - (60 * 60 * 24)
+            self.ds.log("INFO", 'Comparing to last run: ' + str(self.last_run))
         except Exception as e:
                 traceback.print_exc()
                 self.ds.log("ERROR", "Failed to get required configurations")
@@ -67,7 +68,8 @@ class integration(object):
                 if 'all' not in self.scan_list and scan['name'] not in self.scan_list:
                     self.ds.log("INFO", 'Scan not in scan_list: ' + scan['name'])
                 details = sc.scan_instances.details(scan['id'])
-                if not int(details['finishTime']) > self.last_run:
+                self.ds.log("INFO", 'Comparing to last run: ' + str(self.last_run))
+                if not int(details['finishTime']) > (self.last_run - (60 * 60 * 24)) :
                     self.ds.log("INFO", 'Scan too old: ' + scan['name'] + '(' + str(details['finishTime']) + ')')
                     continue
                 vulns = sc.analysis.scan(scan['id'])
