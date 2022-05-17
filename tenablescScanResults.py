@@ -26,6 +26,19 @@ from DefenseStorm import DefenseStorm
 
 class integration(object):
 
+
+    JSON_field_mappings = {
+        'vprScore' : 'score',
+        'ips' : 'client_ip',
+        'severity_name' : 'severity',
+        'dnsName' : 'dns_host_name',
+        'macAddress' : 'client_mac',
+        'scan' : 'scan_id',
+        'patchPubDate' : 'software_version_additional',
+        'pluginlD' : 'sensor_id',
+        'pluginName' : 'sensor_name',
+    }
+
     def tenablesc_main(self): 
 
         # Get JDBC Config info
@@ -80,7 +93,8 @@ class integration(object):
                     vuln['scan'] = scan['name']
                     vuln['scanner'] = 'TenableSC'
                     vuln['timestamp'] = details['finishTime']
-                    self.ds.writeJSONEvent(vuln)
+                    self.ds.writeJSONEvent(vuln, JSON_field_mappings = self.JSON_field_mappings)
+
         self.ds.set_state(self.state_dir, self.current_run)
         self.ds.log('INFO', "Done Sending Notifications")
 
